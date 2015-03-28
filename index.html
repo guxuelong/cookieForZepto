@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>cookie</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<script src="zepto.js"></script>
+	<script src="cookieForZepto.js"></script>
+
+</head>
+<body>
+<div>创建cookie</div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$.cookie("name","guxuelong1",{expires:"s10"});
+		setTimeout(function(){console.log("5s:"+$.cookie("name"));},5000);
+		setTimeout(function(){console.log("10s:"+$.cookie("name"));},10000);
+		
+		setTimeout(function(){
+			$.cookie("name","guxuelong2",{expires:"s10"});
+			console.log("创建:"+$.cookie("name"));
+			$.cookie("name",null);
+			console.log("清除cookie:"+$.cookie("name"));
+		},15000);
+
+	});
+</script>
+</body>
+</html>
