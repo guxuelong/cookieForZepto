@@ -18,9 +18,10 @@ Cookie For Zepto
 
 获取Cookie
 -----------------------------------
-> 使用jQuery获取cookie的值的方法那是相当的简单。如：<br>
+> 获取cookie的值的方法那是相当的简单。如：<br>
 >  * $.cookie("example");
 
 删除Cookie 
 -----------------------------------
+> 删除cookie的值的方法那是相当的简单。如：<br>
 >  * $.cookie("example",null); 或者 $.cookie("example",undefined); 
