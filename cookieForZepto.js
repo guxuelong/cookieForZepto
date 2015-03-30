@@ -34,12 +34,8 @@
 			].join(''))
 		}
 		// 获取cookie
-		opts = value || {}
-		var decode = opts.raw ? function(s) {
-			return s
-		} : decodeURIComponent
-
-		return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null
+		opts = $.extend({}, $.cookie.defaults, value);
+		return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? {true:result[1],false:decodeURIComponent(result[1])}[opts.raw] : null
 	};
 
 	$.cookie.defaults = {
